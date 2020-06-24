@@ -1,6 +1,7 @@
 # Opening the page Weather Shopper
+from base_page import base_page_1
 import time
-from selenium import webdriver
+from base_page import verify_temperature
 
 
 def get_product_price(product_text):
@@ -69,20 +70,6 @@ def close_browser(driver):
     driver.quit()
 
 
-def base_page():
-    # Create an instance of Firefox WebDriver
-    driver = webdriver.Firefox()
-    url = 'https://weathershopper.pythonanywhere.com/sunscreen'
-    driver.get(url)
-    # Check if the title of the page is proper
-    if(driver.title == "The Best Sunscreens in the World!"):
-        print("Success: Sunscreen Page launched")
-    else:
-        print("Failed: Sunscreen Page not launched")
-
-    return driver
-
-
 def calculate_least_expensive(filter, driver):
 
     filter_by_product = price_extract(filter, driver)
@@ -95,15 +82,27 @@ def calculate_least_expensive(filter, driver):
     add_to_cart(least_expensive, driver)
 
 
-# ----START OF SCRIPT
-if __name__ == '__main__':
-    driver = base_page()
+def filter_moisturizer(driver):
 
-    # Filter the Aloe and Almond
+    filter1 = 'Aloe'
+    filter2 = 'Almond'
+    calculate_least_expensive(filter1, driver)
+    calculate_least_expensive(filter2, driver)
+
+
+def filter_sunscreen(driver):
     filter1 = 'SPF-50'
     filter2 = 'SPF-30'
     calculate_least_expensive(filter1, driver)
     calculate_least_expensive(filter2, driver)
+
+
+# ----START OF SCRIPT
+if __name__ == '__main__':
+    driver = base_page_1()
+    page_flag = verify_temperature(driver)
+    # Filter the Aloe and Almond
+    filter_moisturizer(driver)
 
     # Verify in Cart
     go_to_cart(driver)
