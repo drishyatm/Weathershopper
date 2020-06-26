@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 
 
-def base_page_1():
+def base_page():
 
     # Create an instance of Firefox WebDriver
     driver = webdriver.Chrome()
@@ -33,7 +33,7 @@ def verify_temperature(driver):
     if int(temperature_only) > 34:
         print("sunscreen")
         button = driver.find_element_by_xpath(
-            "/html/body/div[1]/div[3]/div[2]/a/button[contains(text(),'Buy sunscreens')]")
+            "//button[contains(text(),'Buy sunscreens')]")
         button.click()
         if(driver.title == "The Best Sunscreens in the World!"):
             print("Success: Sunscreen Page launched")
@@ -44,7 +44,7 @@ def verify_temperature(driver):
     elif int(temperature_only) < 19:
         print("moistriser")
         button = driver.find_element_by_xpath(
-            "/html/body/div[1]/div[3]/div[1]/a/button[contains(text(),'Buy moisturizers')]")
+            "//button[contains(text(),'Buy moisturizers')]")
         button.click()
         if(driver.title == "The Best Moisturizers in the World!"):
             print("Success: Moisturizers Page launched")

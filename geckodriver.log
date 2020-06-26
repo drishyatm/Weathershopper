@@ -10,3 +10,16 @@
 1592990451052	Marionette	WARN	TLS certificate errors will be ignored for this session
 1592991025636	Marionette	INFO	Stopped listening on port 35561
 1592991030016	Marionette	INFO	Stopped listening on port 43003
+1593153505283	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXO05FW"
+1593153507504	Marionette	INFO	Listening on port 38309
+1593153507609	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593153709455	Marionette	INFO	Stopped listening on port 38309
+1593154278531	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileDn9ovw"
+1593154280163	Marionette	INFO	Listening on port 46839
+1593154280258	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593154473593	Marionette	INFO	Stopped listening on port 46839
+1593154593749	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6oC0vN"
+1593154595318	Marionette	INFO	Listening on port 45057
+1593154595354	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 203: NS_ERROR_FAILURE: Should pass a non-null uri
+1593154796223	Marionette	INFO	Stopped listening on port 45057

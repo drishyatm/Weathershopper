@@ -1,5 +1,5 @@
 # Opening the page Weather Shopper
-from base_page import base_page_1
+from base_page import base_page
 import time
 from base_page import verify_temperature
 
@@ -99,7 +99,7 @@ def filter_sunscreen(driver):
 
 # ----START OF SCRIPT
 if __name__ == '__main__':
-    driver = base_page_1()
+    driver = base_page()
     page_flag = verify_temperature(driver)
     # Filter the Aloe and Almond
     filter_moisturizer(driver)
