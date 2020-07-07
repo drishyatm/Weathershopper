@@ -11,10 +11,10 @@ def verify_the_cart(driver):
     price_xpath = driver.find_elements_by_xpath(
         "//tbody/descendant::tr/descendant::td[2]")
     for each_column in price_xpath:
-        count = count+1
+        count_items_cart = count_items_cart+1
         print_columns = each_column.text
         print_columns = int(print_columns)
-        sum_items_cart = int(sum)+int(print_columns)
+        sum_items_cart = int(sum_items_cart)+int(print_columns)
     print(sum)
     print("count of rows ", count_items_cart)
     return sum_items_cart
@@ -32,7 +32,7 @@ def verify_total_cost(sum, driver):
         print("Total is not correct")
 
 
-def temperature_got_to_url(driver):
+def temperature_go_to_url(driver):
     "redirecting to the url as per the temperature"
     page_flag = verify_temperature(driver)
     if (page_flag == 'M'):
@@ -41,15 +41,3 @@ def temperature_got_to_url(driver):
         filter_sunscreen(driver)
     else:
         print("flag not found")
-
-
-if __name__ == '__main__':
-
-    driver = base_page()
-    temperature_got_to_url(driver)
-    # Verify in Cart
-    go_to_cart(driver)
-    sum = verify_the_cart(driver)
-    verify_total_cost(sum, driver)
-    # close the Browser
-    close_browser(driver)

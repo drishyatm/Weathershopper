@@ -5,7 +5,7 @@ from base_page import verify_temperature
 
 
 def get_product_price(product_text):
-    # Parse the product price from the product text
+    " Parse the product price from the product text"
     price = product_text.split("Price:")[-1]
     price = price.split("Rs.")[-1]
     price = price.split("\n")[0]
@@ -17,7 +17,7 @@ def get_product_price(product_text):
 
 
 def get_least_expensive(actual_price):
-    # Method to find the Most expensive
+    " Method to find the least expensive"
     least_value = 1000
     for each_value in actual_price:
         if each_value < least_value:
@@ -28,7 +28,7 @@ def get_least_expensive(actual_price):
 
 
 def add_to_cart(least_expensive, driver):
-    # Adding the most expensive one to the Cart
+    " Adding the least expensive one to the Cart"
     converted_least_expensive = str(least_expensive)
     xpath_button = "//div[contains(@class,'col-4') and contains(.,'{}')]/descendant::button[text()='Add']".format(
         converted_least_expensive)
@@ -40,7 +40,7 @@ def add_to_cart(least_expensive, driver):
 
 
 def go_to_cart(driver):
-    # Verify the cart has the item
+    " Verify the cart has the item"
     cart = driver.find_element_by_xpath("//button[contains(text(),'Cart')]")
     cart.click()
     time.sleep(2)
@@ -95,17 +95,3 @@ def filter_sunscreen(driver):
     filter2 = 'SPF-30'
     calculate_least_expensive(filter1, driver)
     calculate_least_expensive(filter2, driver)
-
-
-# ----START OF SCRIPT
-if __name__ == '__main__':
-    driver = base_page()
-    page_flag = verify_temperature(driver)
-    # Filter the Aloe and Almond
-    filter_moisturizer(driver)
-
-    # Verify in Cart
-    go_to_cart(driver)
-
-    # close the Browser
-    close_browser(driver)

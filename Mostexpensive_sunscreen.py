@@ -70,10 +70,7 @@ def call_browser():
     for each_price in product_text:
         price_split = each_price.text
         actual_price.append(get_product_price(price_split))
-    """
-    for this_price in actual_price:
-        print(this_price)
-    """
+
     # finding the most expensive
     most_expensive = get_most_expensive(actual_price)
     print("most expensive ", most_expensive)

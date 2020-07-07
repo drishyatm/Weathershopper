@@ -1,7 +1,7 @@
 from base_page import base_page
 from base_page import verify_temperature
 from add_to_cart import *
-from check_cart_items_total import temperature_got_to_url, verify_the_cart, verify_total_cost
+from check_cart_items_total import temperature_go_to_url, verify_the_cart, verify_total_cost
 
 
 def payment_click(driver):
@@ -14,9 +14,8 @@ def payment_click(driver):
 
 def enter_details_to_payment(driver):
     # switch to frame
-    # driver.switch_to_frame(driver.find_element_by_xpath(
-    #  "//iframe[contains(@name,'stripe checkout app')]"))
-    driver.switch_to_frame(
+
+    driver.switch_to.frame(
         driver.find_element_by_class_name("stripe_checkout_app"))
     # Enter the name
     email = driver.find_element_by_xpath("//input[@type='email']")
@@ -55,8 +54,8 @@ def verify_payment(driver):
 
 
 if __name__ == '__main__':
-    driver = base_page
-    temperature_got_to_url(driver)
+    driver = base_page()
+    temperature_go_to_url(driver)
     # Verify in Cart
     go_to_cart(driver)
     sum = verify_the_cart(driver)
