@@ -52,13 +52,14 @@ def go_to_cart(driver):
 def call_browser():
     # Create an instance of Firefox WebDriver
     driver = webdriver.Chrome()
-    url = 'https://weathershopper.pythonanywhere.com/moisturizer'
+    url = 'https://weathershopper.pythonanywhere.com/sunscreen'
     driver.get(url)
+
     # Check if the title of the page is proper
-    if(driver.title == "The Best Moisturizers in the World!"):
-        print("Success: Moisturizers Page launched")
+    if(driver.title == "The Best Sunscreens in the World!"):
+        print("Success: Sunscreen Page launched")
     else:
-        print("Failed: Moisturizers Page not launched")
+        print("Failed: Sunscreen Page not launched")
 
     # Xpath finder for Price
     product_text = driver.find_elements_by_xpath(
@@ -69,10 +70,7 @@ def call_browser():
     for each_price in product_text:
         price_split = each_price.text
         actual_price.append(get_product_price(price_split))
-    """
-    for this_price in actual_price:
-        print(this_price)
-    """
+
     # finding the most expensive
     most_expensive = get_most_expensive(actual_price)
     print("most expensive ", most_expensive)
