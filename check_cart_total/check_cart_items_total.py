@@ -3,7 +3,7 @@ from add_to_cart import go_to_cart, filter_moisturizer, filter_sunscreen, close_
 
 
 def verify_the_cart(driver):
-    # Verifying the Cart with the number of rows, count of rows and extracting the sum of price
+    " Verifying the Cart with the number of rows, count of rows and extracting the sum of price"
 
     count_of_items = 0
     sum_of_items = 0
@@ -20,6 +20,7 @@ def verify_the_cart(driver):
 
 
 def verify_total_cost(sum, driver):
+    "Veifying the cart total and displayed total"
     xpath_for_total_cost = driver.find_element_by_id('total').text
     total_extract = xpath_for_total_cost.split()[2]
     total_extract = int(total_extract)

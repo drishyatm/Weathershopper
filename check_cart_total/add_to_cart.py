@@ -99,17 +99,3 @@ def filter_sunscreen(driver):
     filter2 = 'SPF-30'
     calculate_least_expensive(filter1, driver)
     calculate_least_expensive(filter2, driver)
-
-
-# ----START OF SCRIPT
-if __name__ == '__main__':
-    driver = weather_shopper_page()
-    page_flag = verify_temperature(driver)
-    # Filter the Aloe and Almond
-    filter_moisturizer(driver)
-
-    # Verify in Cart
-    go_to_cart(driver)
-
-    # close the Browser
-    close_browser(driver)
