@@ -1,7 +1,6 @@
 # Opening the page Weather Shopper
-from base_page import base_page
 import time
-from base_page import verify_temperature
+from base_page import weather_shopper_page, verify_temperature
 
 
 def get_product_price(product_text):
@@ -100,17 +99,3 @@ def filter_sunscreen(driver):
     filter2 = 'SPF-30'
     calculate_least_expensive(filter1, driver)
     calculate_least_expensive(filter2, driver)
-
-
-# ----START OF SCRIPT
-if __name__ == '__main__':
-    driver = base_page()
-    page_flag = verify_temperature(driver)
-    # Filter the Aloe and Almond
-    filter_moisturizer(driver)
-
-    # Verify in Cart
-    go_to_cart(driver)
-
-    # close the Browser
-    close_browser(driver)

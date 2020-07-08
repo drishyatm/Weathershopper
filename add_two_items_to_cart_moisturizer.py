@@ -1,7 +1,6 @@
 # Opening the page Weather Shopper
 import time
 from selenium import webdriver
-from base_page import base_page_2
 
 
 def get_product_price(product_text):

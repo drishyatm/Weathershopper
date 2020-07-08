@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 
 
-def base_page():
+def weather_shopper_page():
 
     # Create an instance of Firefox WebDriver
     driver = webdriver.Chrome()

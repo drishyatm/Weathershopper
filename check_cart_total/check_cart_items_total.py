@@ -1,26 +1,26 @@
-from base_page import base_page
-from base_page import verify_temperature
-from add_to_cart import *
+from base_page import weather_shopper_page, verify_temperature
+from add_to_cart import go_to_cart, filter_moisturizer, filter_sunscreen, close_browser
 
 
 def verify_the_cart(driver):
-    # Verifying the Cart with the number of rows, count of rows and extracting the sum of price
+    " Verifying the Cart with the number of rows, count of rows and extracting the sum of price"
 
     count_of_items = 0
     sum_of_items = 0
     price_xpath = driver.find_elements_by_xpath(
         "//tbody/descendant::tr/descendant::td[2]")
     for each_column in price_xpath:
-        count = count+1
+        count_of_items = count_of_items+1
         print_columns = each_column.text
         print_columns = int(print_columns)
-        sum = int(sum)+int(print_columns)
-    print(sum)
+        sum_of_items = int(sum_of_items)+int(print_columns)
+    print(sum_of_items)
     print("count of rows ", count_of_items)
     return sum_of_items
 
 
 def verify_total_cost(sum, driver):
+    "Veifying the cart total and displayed total"
     xpath_for_total_cost = driver.find_element_by_id('total').text
     total_extract = xpath_for_total_cost.split()[2]
     total_extract = int(total_extract)
@@ -32,7 +32,7 @@ def verify_total_cost(sum, driver):
 
 
 if __name__ == '__main__':
-    driver = base_page
+    driver = weather_shopper_page()
     page_flag = verify_temperature(driver)
     if (page_flag == 'M'):
         filter_moisturizer(driver)
