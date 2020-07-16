@@ -1,6 +1,17 @@
 # Weathershopper
 The Jira task to work on weather shopper exercise . 
 
+###  Prerequisites ###
+a) Install Python 3.x
+
+b) Add Python 3.x to your PATH environment variable
+
+c) If you do not have it already, get pip (NOTE: Most recent Python distributions come with pip)
+
+d) pip install -r requirements.txt to install dependencies
+
+### Files/Folders ###
+
 Task 1 : weathershopper.py \
 a) Open  https://weathershopper.pythonanywhere.com in your browser \
 b) Read the temperature listed on the page \
