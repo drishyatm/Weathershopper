@@ -1,14 +1,13 @@
 # Opening the page Weather Shopper
 import time
-import selenium
 from selenium import webdriver
 
 # Create an instance of Firefox WebDriver
 driver = webdriver.Firefox()
 
 # url would be provided here and open.
-url = 'https://weathershopper.pythonanywhere.com'
-driver.get(url)
+URL = 'https://weathershopper.pythonanywhere.com'
+driver.get(URL)
 # Check if the title of the page is proper
 if(driver.title == "Current Temperature"):
     print("Success: Weather shopper page launched successfully")
