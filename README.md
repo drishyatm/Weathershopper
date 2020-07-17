@@ -10,7 +10,7 @@ c) If you do not have it already, get pip (NOTE: Most recent Python distribution
 
 d) pip install -r requirements.txt to install dependencies
 
-### Files/Folders ###
+### Tasks and descriptions ###
 
 Task 1 : weathershopper.py \
 a) Open  https://weathershopper.pythonanywhere.com in your browser \
