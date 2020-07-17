@@ -2,24 +2,29 @@ import time
 from selenium import webdriver
 
 
-def weather_shopper_page():
+def verify_title(driver):
+    # Check if the title of the page is proper
+        if(driver.title == "Current Temperature"):
+            print("Success: Weather shopper page launched successfully")
+        else:
+            print("Failed: Weather Shopper page Title is incorrect")
+        return driver
 
-    # Create an instance of Firefox WebDriver
+def current_temperature_page():
+    "launch url and verify the current tempeature page"
+    # Create an instance of chrome WebDriver
     driver = webdriver.Chrome()
 
     # url would be provided here and open.
     url = 'https://weathershopper.pythonanywhere.com'
     driver.get(url)
-
-    # Check if the title of the page is proper
-    if(driver.title == "Current Temperature"):
-        print("Success: Weather shopper page launched successfully")
-    else:
-        print("Failed: Weather Shopper page Title is incorrect")
+    
     return driver
+ 
 
 
 def verify_temperature(driver):
+    "verify the temperature"
     # Reading the Temperature
     current_temperature = driver.find_element_by_xpath(
         "//span[@id='temperature']").text
